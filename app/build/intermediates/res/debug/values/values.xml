@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/AndroidProject/Restaurant-Finder2/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="base_center_color_pressed">#ffff8c2f</color>
+    <color name="base_end_color_default">#ffffffff</color>
+    <color name="base_end_color_pressed">#ffffa254</color>
+    <color name="base_start_color_default">#ffffffff</color>
+    <color name="base_start_color_pressed">#ffff7a13</color>
+    <color name="blue">#ff3590c4</color>
+    <color name="btn_default_color_light">#ffff5f11</color>
+    <color name="btn_focused_color_yellow">#fffdfdfd</color>
+    <color name="btn_pressed_color_light">#fffdfdfd</color>
+    <color name="contents_text">#ff000000</color>
+    <color name="deep_gray">#ff555555</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="frame_layout_background">#c6c3c6</color>
+    <color name="gray">#ff666664</color>
+    <color name="gray_background">#fff7f7f7</color>
+    <color name="green">#7700ff00</color>
+    <color name="light_gray">#ff757575</color>
+    <color name="listitem_divide">#ffd4d3d3</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="red">#ffff0000</color>
+    <color name="result_points">#c000ff00</color>
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="rounded_container_border">#ffb7babb</color>
+    <color name="saffron">#ffffa649</color>
+    <color name="screen_background_white">#00ffffff</color>
+    <color name="share_text">#ff000000</color>
+    <color name="solid_blue">#ff0000ff</color>
+    <color name="solid_green">#ff00ff00</color>
+    <color name="solid_red">#ffff0000</color>
+    <color name="solid_saffron">#ffff6414</color>
+    <color name="solid_while">#ff888888</color>
+    <color name="solid_yellow">#ffffff00</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="status_view">#50000000</color>
+    <color name="text_color_default">#ff000000</color>
+    <color name="text_color_pressed">#ffffffff</color>
+    <color name="titlebackgroundcolor">#fffe8625</color>
+    <color name="translucent_background">#00000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="white_background">#00ffffff</color>
+    <color name="yellow">#ffff7000</color>
+    <!-- From: file:/E:/AndroidProject/Restaurant-Finder2/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">RestaurantFinder</string>
+    <string name="back_button_label">Back</string>
+    <string name="cancel_button_label">Cancel</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="label">RestaurantFinderAdapter</string>
+    <string name="login_activity_loginfail_text_both">The username or password isn\'t valid. A Restaurant Finder account is
+        required. Please try again. </string>
+    <string name="login_activity_loginfail_text_pwmissing">Type the password for this account.</string>
+    <string name="login_activity_loginfail_text_pwonly">You entered the wrong password or your account has changed.
+        Please re-enter your password.</string>
+    <string name="login_activity_newaccount_text">Sign in to your Restaurant Finder account. </string>
+    <string name="login_activity_ok_button">Sign in</string>
+    <string name="login_activity_password_label">Password</string>
+    <string name="login_activity_username_label">Username</string>
+    <string name="menu_settings">Settings</string>
+    <string name="notification_login_error">Touch to sign into your Restaurant Finder account.</string>
+    <string name="profile_action">Sample profile</string>
+    <string name="search_button">Search</string>
+    <string name="search_fragment_search_prompt">Input the address below and click search, or just click Current Location</string>
+    <string name="search_gps_button">Current Location</string>
+    <string name="sign_in_button_label">Sign in</string>
+    <string name="tabhost_activity_loading">Loading</string>
+    <string name="title_activity_detail">Detail</string>
+    <string name="title_activity_list">List</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_map">Map</string>
+    <string name="title_activity_search">Search</string>
+    <string name="title_activity_tab_host">TabHostActivity</string>
+    <string name="ui_activity_authenticating">Authenticating\u2026</string>
+    <string name="ui_activity_title">Sign-in</string>
+    <string name="view_profile">View Profile</string>
+    <string name="warning">Warning</string>
+    <!-- From: file:/E:/AndroidProject/Restaurant-Finder2/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="android:Theme.Light"/>
+</resources>

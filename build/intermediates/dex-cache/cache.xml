@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\Android\SDK\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="E:\AndroidProject\Restaurant-Finder2\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-95e90accb2727aa2e3ca98559a315ffbf588d787.jar" />
+    </item>
+
+</items>
