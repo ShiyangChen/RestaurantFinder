@@ -29,6 +29,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -44,14 +45,20 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import org.w3c.dom.Document;
+
 import edu.cmu.android.restaurant.listeners.OnDetailRequestedListener;
 import edu.cmu.android.restaurant.models.Deal;
 import edu.cmu.android.restaurant.models.Restaurant;
+import edu.cmu.android.restaurant.utils.DomParser;
+import edu.cmu.android.restaurant.utils.Utility;
+import edu.cmu.android.restaurant.utils.XMLParseException;
 
 public class DetailFragment extends Fragment implements SensorEventListener {
 
 	private static final String TAG = "DetailFragment";
-	private static final String ABOUT_CONTENT = "CMU 18641 Java Smart Phone\nGroup: E&M\n- Shenghao Huang\n- Yuchen Yang\n- Rui Gao";
+	private static final String ABOUT_CONTENT = "TAMU Restaurant Finder\nGroup: AggieGeeks\n- Shiyang Chen\n- Yuchen Yang\n- Rui Gao";
 	private static final String STRING_DEFAULT = "Not available";
 	private static final int TAKE_PICTURE = 1;
 
@@ -187,7 +194,8 @@ public class DetailFragment extends Fragment implements SensorEventListener {
 		/* get restaurant review to display */
 		getViewResReview(mView);
 		/* get restaurant image to display */
-		getViewResImage(mView, res1.getPhotoUrl());
+		//getViewResImage(mView, res1.getPhotoUrl());
+		new LoadImageTask().execute(mView, res1.getPhotoUrl());
 
 	}
 
@@ -227,7 +235,8 @@ public class DetailFragment extends Fragment implements SensorEventListener {
 		/*
 		 * get restaurant image to display
 		 */
-		getViewResImage(mView, res1.getPhotoUrl());
+		//getViewResImage(mView, res1.getPhotoUrl());
+		new LoadImageTask().execute(mView, res1.getPhotoUrl());
 
 	}
 
@@ -363,22 +372,47 @@ public class DetailFragment extends Fragment implements SensorEventListener {
 			revBox.setVisibility(View.VISIBLE);
 		}
 	}
+	private class LoadImageTask extends AsyncTask<Object, Void, Drawable> {
+		/*
+		 * Configuration that can be externalized to a config file
+		 */
+		private View mView;
+		@Override
+		protected Drawable doInBackground(Object... params) {
+			// cast for arguments
+			if (params.length != 2)
+				return null; // check # of args
+			String imgUrl;
+			mView = (View) params[0];
+			imgUrl = (String) params[1];
+			Drawable drawable = loadImageFromNetwork(imgUrl);
+			return drawable;
+		}
 
-	/**
+		@Override
+		protected void onPostExecute(Drawable drawable) {
+			final ImageView mImageView = (ImageView) mView.findViewById(R.id.detail_res_img);
+			mImageView.setImageDrawable(drawable);
+			mImageView.setAdjustViewBounds(true);
+			mImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+		}
+
+	}
+	/*
 	 * getViewResImage - get restaurant image to display
 	 */
-	public void getViewResImage(View mView, final String imgUrl) {
+	/*public void getViewResImage(View mView, final String imgUrl) {
 
 		final ImageView mImageView = (ImageView) mView
 				.findViewById(R.id.detail_res_img);
 
 		/* open a new thread to load the image */
-		new Thread(new Runnable() {
+		//new Thread(new Runnable() {
 
-			Drawable drawable = loadImageFromNetwork(imgUrl);
+			//Drawable drawable = loadImageFromNetwork(imgUrl);
 
-			@Override
-			public void run() {
+			//@Override
+			/*public void run() {
 				mImageView.post(new Runnable() {
 					@Override
 					public void run() {
@@ -387,12 +421,12 @@ public class DetailFragment extends Fragment implements SensorEventListener {
 				});
 			}
 
-		}).start();
+		}).start();*/
 
-		mImageView.setAdjustViewBounds(true);
-		mImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+		//mImageView.setAdjustViewBounds(true);
+		//mImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
-	}
+	//}*/
 
 	/**
 	 * On attach call back method. Cast the host activity into
@@ -419,6 +453,7 @@ public class DetailFragment extends Fragment implements SensorEventListener {
 			drawable = Drawable.createFromStream(
 					new URL(imageUrl).openStream(), "image.jpg");
 		} catch (IOException e) {
+			Log.i("test", "HAHAHAHAH");
 			Log.d("test", e.getMessage());
 		}
 
