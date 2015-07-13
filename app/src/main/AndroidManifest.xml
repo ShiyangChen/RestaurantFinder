@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.cmu.android.restaurant"
+    package="edu.tamu.android.restaurant"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -54,7 +54,7 @@
         <uses-library android:name="com.google.android.maps"/>
         
         <activity
-            android:name=".LoginActivity"
+            android:name="edu.tamu.android.restaurant.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -63,16 +63,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.cmu.android.restaurant.MyMapActivity"      
+            android:name="edu.tamu.android.restaurant.MyMapActivity"
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name=".TabHostActivity"
+            android:name="edu.tamu.android.restaurant.TabHostActivity"
             android:label="@string/title_activity_tab_host" 
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
 
-		<service android:name=".authentication.AuthenticationService" >
+		<service android:name="edu.tamu.android.restaurant.authentication.AuthenticationService" >
 		 	<intent-filter>
 		 	    <action android:name="android.accounts.AccountAuthenticator" />
    			</intent-filter>
